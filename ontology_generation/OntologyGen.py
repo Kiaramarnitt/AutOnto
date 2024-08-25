@@ -19,14 +19,20 @@ class OntologyGen():
 
         self.utils = utilsLLM(model_name, deployment_name)
 
-    def extract_concepts(self, data, topic_name):
+    def extract_concepts(self, data, topic_name, add_OAconcepts = False):
         temp = list(data['topic_first_word'].unique())
+        all_topics = [topic.strip() for group in temp for topic in group.split(',')]
 
-        print("Number of concepts before LLM refinement: ", len(temp))
+        print("Number of concepts before LLM refinement: ", len(all_topics))
+        # print(all_topics)
 
-        role = "You are an ontology engineer, tasked with helping build an ontology in the domain of {topic_name}"
-        prompt = "Given a list of topics, remove topics that do not belong to the {topic_name} domain:\n"
-        prompt += ', '.join(i for i in temp) + "\n\n Return only the topics, no symbols or extra sentences"
+        role = f"You are an ontology engineer, tasked with helping build an ontology in the domain of {topic_name}"
+        prompt = f"Given a list of topics, delete topics that do not belong to the {topic_name} domain:\n"
+        prompt += ', '.join(i for i in all_topics) + "\n\n DO NOT ADD NEW TOPICS. Return only the topics, no symbols or extra sentences"
+        
+        # print("\n")
+        # print(prompt)
+        
         concepts1 = self.utils.prompt_gpt(role, prompt)
 
         if isinstance(concepts1, str):
@@ -34,19 +40,29 @@ class OntologyGen():
             concepts1 = concepts1.split(", ")
         
         print("Number of concepts after LLM refinement: ", len(concepts1))
+        # print(concepts1)
 
-        concept_request = requests.get("https://api.openalex.org/concepts?search={topic_name}").json()
-        # res = concept_request['results']
-        # res[0].get('related_concepts', [])
+        if add_OAconcepts == True:
+            url = f"https://api.openalex.org/concepts?search={topic_name}"
+            concept_request = requests.get(url).json()
+            # res = concept_request['results']
+            # res[0].get('related_concepts', [])
         
         
-        concepts2 = [entry["display_name"] for entry in concept_request['results'][0].get('related_concepts', [])]
-        print("Number of concepts related to domain as per OpenAlexDatabase: ", len(concepts2))
-        taxonomy_topics = list(set(concepts1 + concepts2))
-        taxonomy_topics_df = pd.DataFrame({'topics': taxonomy_topics})
+            concepts2 = [entry["display_name"] for entry in concept_request['results'][0].get('related_concepts', [])]
+            print("Number of concepts related to domain as per OpenAlexDatabase: ", len(concepts2))
+            taxonomy_topics = list(set(concepts1 + concepts2))
+            taxonomy_topics_df = pd.DataFrame({'topics': taxonomy_topics})
+            
+            return taxonomy_topics_df
+        
+        else:
+            taxonomy_topics = list(set(concepts1))
+            taxonomy_topics_df = pd.DataFrame({'topics': taxonomy_topics})
 
-        return taxonomy_topics_df
+            return taxonomy_topics_df
     
+
     def update_taxonomy(self, response, existing_taxonomy):
         try:
             # Assuming the response is a string representation of a dictionary
@@ -113,47 +129,84 @@ class OntologyGen():
             return ast.literal_eval(data)
         else:
             return data
-        
-    # def reorganize_taxonomy(self, taxonomy):
-    #     new_taxonomy = {
-    #         'Natural Language Processing': {'superTopicOf': {}},
-    #         'Related Domain 1': {},
-    #         'Related Domain 2': {}
-    #     }
 
+    # def reorganize_taxonomy(self, taxonomy, main_categories):
+    #     # Initialize new_taxonomy with existing categories from the taxonomy
+    #     new_taxonomy = {cat: taxonomy.get(cat, {'superTopicOf': {}}) for cat in main_categories if cat in taxonomy}
+        
+    #     # Add missing categories
+    #     for cat in main_categories:
+    #         if cat not in new_taxonomy:
+    #             new_taxonomy[cat] = {'superTopicOf': {}}
+        
     #     for key, value in taxonomy.items():
-    #         if key.startswith('Artificial Intelligence'):
-    #             new_taxonomy['Artificial Intelligence'] = value
-    #             if key!= "Artificial Intelligence":  
-    #                 new_taxonomy[key] = new_taxonomy["Artificial Intelligence"]
-    #                 del new_taxonomy["Artificial Intelligence"]       
-    #         elif key.startswith('Computer Science'):
-    #             new_taxonomy['Computer Science'] = value
-    #             if key!= "Computer Science":  
-    #                 new_taxonomy[key] = new_taxonomy["Computer Science"]
-    #                 del new_taxonomy["Computer Science"]
-    #         else:
-    #             new_taxonomy['Natural Language Processing']['superTopicOf'][key] = value
+    #         if key in main_categories:
+    #             continue  # Skip if the key is already a main category
+            
+    #         categorized = False
+    #         for main_cat in main_categories:
+    #             if key.startswith(main_cat):
+    #                 if key == main_cat:
+    #                     new_taxonomy[main_cat] = value
+    #                 else:
+    #                     new_taxonomy[key] = value
+    #                     if main_cat in new_taxonomy:
+    #                         del new_taxonomy[main_cat]
+    #                 categorized = True
+    #                 break
+            
+    #         if not categorized:
+    #             new_taxonomy[main_categories[0]]['superTopicOf'][key] = value
 
     #     return new_taxonomy
 
+
     def reorganize_taxonomy(self, taxonomy, main_categories):
-        new_taxonomy = {cat: {'superTopicOf': {}} for cat in main_categories}
+        excluded_categories = {'Removed', 'Irrelevant'}
         
-        for key, value in taxonomy.items():
-            categorized = False
+        def clean_taxonomy(tax):
+            if isinstance(tax, dict):
+                return {k: clean_taxonomy(v) for k, v in tax.items() if k not in excluded_categories}
+            elif isinstance(tax, list):
+                return [clean_taxonomy(item) for item in tax if not (isinstance(item, dict) and any(k in excluded_categories for k in item))]
+            else:
+                return tax
+
+        # Clean the input taxonomy
+        cleaned_taxonomy = clean_taxonomy(taxonomy)
+        
+        # Initialize new_taxonomy with existing categories from the cleaned taxonomy
+        new_taxonomy = {cat: cleaned_taxonomy.get(cat, {'superTopicOf': {}}) 
+                        for cat in main_categories 
+                        if cat in cleaned_taxonomy}
+        
+        # Add missing categories
+        for cat in main_categories:
+            if cat not in new_taxonomy:
+                new_taxonomy[cat] = {'superTopicOf': {}}
+        
+        def categorize(key, value):
             for main_cat in main_categories:
                 if key.startswith(main_cat):
                     if key == main_cat:
                         new_taxonomy[main_cat] = value
                     else:
                         new_taxonomy[key] = value
-                        del new_taxonomy[main_cat]
-                    categorized = True
-                    break
-            
-            if not categorized:
-                new_taxonomy[main_categories[0]]['superTopicOf'][key] = value
+                        if main_cat in new_taxonomy:
+                            del new_taxonomy[main_cat]
+                    return True
+            return False
+
+        def process_item(key, value):
+            if not categorize(key, value):
+                if isinstance(value, dict) and 'superTopicOf' in value:
+                    new_taxonomy[main_categories[0]]['superTopicOf'][key] = value
+                else:
+                    new_taxonomy[main_categories[0]]['superTopicOf'][key] = {'superTopicOf': value}
+
+        for key, value in cleaned_taxonomy.items():
+            if key not in main_categories:
+                process_item(key, value)
 
         return new_taxonomy
     
