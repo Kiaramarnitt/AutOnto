@@ -1,0 +1,480 @@
+@prefix ns1: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://fraunhofer.de/example/Activity_recognition> a rdfs:Class ;
+    rdfs:label "Activity recognition" ;
+    rdfs:comment "The process of identifying specific activities from sensor data." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Affective_computing> a rdfs:Class ;
+    rdfs:label "Affective computing" ;
+    rdfs:comment "The study and development of systems and devices that can recognize, interpret, and process human emotions." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Annotation> a rdfs:Class ;
+    rdfs:label "Annotation" ;
+    rdfs:comment "The process of adding explanatory notes or metadata to a text." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Artificial_Intelligence_Foundations> a rdfs:Class ;
+    rdfs:label "Artificial Intelligence Foundations" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Expert_Systems> .
+
+<http://fraunhofer.de/example/Artificial_neural_network> a rdfs:Class ;
+    rdfs:label "Artificial neural network" ;
+    rdfs:comment "Computing systems vaguely inspired by the biological neural networks of animal brains." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Automated_reasoning> a rdfs:Class ;
+    rdfs:label "Automated reasoning" ;
+    rdfs:comment "The use of computers to emulate human reasoning." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Automatic_summarization> a rdfs:Class ;
+    rdfs:label "Automatic summarization" ;
+    rdfs:comment "The use of computer programs to create a shortened version of a text." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Processing>,
+        <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Bag-of-words_model> a rdfs:Class ;
+    rdfs:label "Bag-of-words model" ;
+    rdfs:comment "A simplifying representation used in NLP and information retrieval, ignoring grammar and word order." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Chatbot> a rdfs:Class ;
+    rdfs:label "Chatbot" ;
+    rdfs:comment "A software application designed to simulate conversation with human users." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Chinese_Idioms_Analysis> a rdfs:Class ;
+    rdfs:label "Chinese Idioms Analysis" ;
+    rdfs:comment "The study of the structure, meaning, and use of Chinese expressions." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Co-occurrence> a rdfs:Class ;
+    rdfs:label "Co-occurrence" ;
+    rdfs:comment "The frequency with which two words or phrases appear together." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Commonsense_reasoning> a rdfs:Class ;
+    rdfs:label "Commonsense reasoning" ;
+    rdfs:comment "AI's ability to make presumptions about the world in the way humans do." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Computational_linguistics> a rdfs:Class ;
+    rdfs:label "Computational linguistics" ;
+    rdfs:comment "The study of language using computational methods." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Computer_Science_Foundations> a rdfs:Class ;
+    rdfs:label "Computer Science Foundations" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Mathematical_Foundations> .
+
+<http://fraunhofer.de/example/Computer_vision> a rdfs:Class ;
+    rdfs:label "Computer vision" ;
+    rdfs:comment "Technology enabling computers to interpret visual information." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Corpus_linguistics> a rdfs:Class ;
+    rdfs:label "Corpus linguistics" ;
+    rdfs:comment "The study of language as expressed in corpora (bodies) of real-world texts." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Data_mining> a rdfs:Class ;
+    rdfs:label "Data mining" ;
+    rdfs:comment "The process of discovering patterns and knowledge from large amounts of data." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Text_mining> .
+
+<http://fraunhofer.de/example/Deep_learning> a rdfs:Class ;
+    rdfs:label "Deep learning" ;
+    rdfs:comment "A subset of machine learning involving neural networks with many layers." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Machine_learning> .
+
+<http://fraunhofer.de/example/Deep_linguistic_processing> a rdfs:Class ;
+    rdfs:label "Deep linguistic processing" ;
+    rdfs:comment "In-depth analysis of linguistic structure for understanding or generation." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Analysis> .
+
+<http://fraunhofer.de/example/Document_classification> a rdfs:Class ;
+    rdfs:label "Document classification" ;
+    rdfs:comment "The process of assigning categories to documents based on their content." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Text_mining> .
+
+<http://fraunhofer.de/example/Document_retrieval> a rdfs:Class ;
+    rdfs:label "Document retrieval" ;
+    rdfs:comment "The task of finding documents relevant to a specific query." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Expert_Systems> a rdfs:Class ;
+    rdfs:label "Expert Systems" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Expert_system> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Artificial_Intelligence_Foundations> .
+
+<http://fraunhofer.de/example/Expert_system> a rdfs:Class ;
+    rdfs:label "Expert system" ;
+    rdfs:comment "AI systems that use expert knowledge to solve complex problems." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Expert_Systems> .
+
+<http://fraunhofer.de/example/Hidden_Markov_model> a rdfs:Class ;
+    rdfs:label "Hidden Markov model" ;
+    rdfs:comment "A statistical model used to represent probabilistic sequences of observable events." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Information_extraction> a rdfs:Class ;
+    rdfs:label "Information extraction" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/News_analytics> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Information_retrieval> a rdfs:Class ;
+    rdfs:label "Information retrieval" ;
+    rdfs:comment "The science of obtaining information relevant to a particular query from a collection of resources." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Intelligent_agent> a rdfs:Class ;
+    rdfs:label "Intelligent agent" ;
+    rdfs:comment "Software that performs tasks autonomously using AI." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Intelligent_tutoring_system> a rdfs:Class ;
+    rdfs:label "Intelligent tutoring system" ;
+    rdfs:comment "Computer systems that provide personalized instruction or feedback to learners." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Knowledge_Representation> a rdfs:Class ;
+    rdfs:label "Knowledge Representation" ;
+    rdfs:comment "Techniques for encoding complex knowledge into a form that AI systems can understand and reason with." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Knowledge_base> .
+
+<http://fraunhofer.de/example/Knowledge_base> a rdfs:Class ;
+    rdfs:label "Knowledge base" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Knowledge_Representation>,
+        <http://fraunhofer.de/example/Knowledge_representation_and_reasoning> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Knowledge_representation_and_reasoning> a rdfs:Class ;
+    rdfs:label "Knowledge representation and reasoning" ;
+    rdfs:comment "Techniques for encoding knowledge in a form that AI systems can use to reason." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Knowledge_base> .
+
+<http://fraunhofer.de/example/Language_Acquisition> a rdfs:Class ;
+    rdfs:label "Language Acquisition" ;
+    rdfs:comment "The process by which humans learn languages." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Language_Analysis> a rdfs:Class ;
+    rdfs:label "Language Analysis" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Deep_linguistic_processing>,
+        <http://fraunhofer.de/example/Semantic_Annotation> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Language_Processing> a rdfs:Class ;
+    rdfs:label "Language Processing" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Automatic_summarization>,
+        <http://fraunhofer.de/example/Lemmatisation>,
+        <http://fraunhofer.de/example/Probabilistic_latent_semantic_analysis>,
+        <http://fraunhofer.de/example/Topic_model> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Language_Representation_Models> a rdfs:Class ;
+    rdfs:label "Language Representation Models" ;
+    rdfs:comment "Models that capture the statistical properties of language for various tasks." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Language_model> a rdfs:Class ;
+    rdfs:label "Language model" ;
+    rdfs:comment "A statistical model that predicts the likelihood of a sequence of words." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Latent_semantic_analysis> a rdfs:Class ;
+    rdfs:label "Latent semantic analysis" ;
+    rdfs:comment "A technique in natural language processing of analyzing relationships between a set of documents and the terms they contain." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Lemmatisation> a rdfs:Class ;
+    rdfs:label "Lemmatisation" ;
+    rdfs:comment "The process of reducing words to their base or root form." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Processing> .
+
+<http://fraunhofer.de/example/Linguistic_Analysis> a rdfs:Class ;
+    rdfs:label "Linguistic Analysis" ;
+    rdfs:comment "The study and analysis of the structure and meaning of language." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Linguistics> a rdfs:Class ;
+    rdfs:label "Linguistics" ;
+    rdfs:comment "The scientific study of language and its structure." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Machine-readable_dictionary> a rdfs:Class ;
+    rdfs:label "Machine-readable dictionary" ;
+    rdfs:comment "A dictionary format that can be easily processed by computer programs." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Machine_learning> a rdfs:Class ;
+    rdfs:label "Machine learning" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Deep_learning> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Machine_translation> a rdfs:Class ;
+    rdfs:label "Machine translation" ;
+    rdfs:comment "Automatic translation of text or speech from one language to another." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Mathematical_Foundations> a rdfs:Class ;
+    rdfs:label "Mathematical Foundations" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Trigram>,
+        <http://fraunhofer.de/example/Value_mathematics> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Computer_Science_Foundations> .
+
+<http://fraunhofer.de/example/Music_and_artificial_intelligence> a rdfs:Class ;
+    rdfs:label "Music and artificial intelligence" ;
+    rdfs:comment "The application of AI techniques to understanding, composing, and performing music." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Natural_Language_Processing> a rdfs:Class ;
+    rdfs:label "Natural Language Processing" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Activity_recognition>,
+        <http://fraunhofer.de/example/Affective_computing>,
+        <http://fraunhofer.de/example/Annotation>,
+        <http://fraunhofer.de/example/Artificial_neural_network>,
+        <http://fraunhofer.de/example/Automated_reasoning>,
+        <http://fraunhofer.de/example/Automatic_summarization>,
+        <http://fraunhofer.de/example/Bag-of-words_model>,
+        <http://fraunhofer.de/example/Chatbot>,
+        <http://fraunhofer.de/example/Chinese_Idioms_Analysis>,
+        <http://fraunhofer.de/example/Co-occurrence>,
+        <http://fraunhofer.de/example/Commonsense_reasoning>,
+        <http://fraunhofer.de/example/Computational_linguistics>,
+        <http://fraunhofer.de/example/Computer_vision>,
+        <http://fraunhofer.de/example/Corpus_linguistics>,
+        <http://fraunhofer.de/example/Document_retrieval>,
+        <http://fraunhofer.de/example/Hidden_Markov_model>,
+        <http://fraunhofer.de/example/Information_extraction>,
+        <http://fraunhofer.de/example/Information_retrieval>,
+        <http://fraunhofer.de/example/Intelligent_agent>,
+        <http://fraunhofer.de/example/Intelligent_tutoring_system>,
+        <http://fraunhofer.de/example/Knowledge_base>,
+        <http://fraunhofer.de/example/Language_Acquisition>,
+        <http://fraunhofer.de/example/Language_Analysis>,
+        <http://fraunhofer.de/example/Language_Processing>,
+        <http://fraunhofer.de/example/Language_Representation_Models>,
+        <http://fraunhofer.de/example/Language_model>,
+        <http://fraunhofer.de/example/Latent_semantic_analysis>,
+        <http://fraunhofer.de/example/Linguistic_Analysis>,
+        <http://fraunhofer.de/example/Linguistics>,
+        <http://fraunhofer.de/example/Machine-readable_dictionary>,
+        <http://fraunhofer.de/example/Machine_learning>,
+        <http://fraunhofer.de/example/Machine_translation>,
+        <http://fraunhofer.de/example/Music_and_artificial_intelligence>,
+        <http://fraunhofer.de/example/Natural_Language_Processing_Models>,
+        <http://fraunhofer.de/example/Natural_language>,
+        <http://fraunhofer.de/example/PARRY>,
+        <http://fraunhofer.de/example/Parsing>,
+        <http://fraunhofer.de/example/Plagiarism_Detection>,
+        <http://fraunhofer.de/example/Polysemy>,
+        <http://fraunhofer.de/example/Query_expansion>,
+        <http://fraunhofer.de/example/Question_answering>,
+        <http://fraunhofer.de/example/Rule-based_machine_translation>,
+        <http://fraunhofer.de/example/Semantic_network>,
+        <http://fraunhofer.de/example/Semantic_similarity>,
+        <http://fraunhofer.de/example/Semi-supervised_learning>,
+        <http://fraunhofer.de/example/Sentiment_analysis>,
+        <http://fraunhofer.de/example/Sign_Language_Recognition>,
+        <http://fraunhofer.de/example/Speaker_recognition>,
+        <http://fraunhofer.de/example/Speech_Analysis>,
+        <http://fraunhofer.de/example/Speech_processing>,
+        <http://fraunhofer.de/example/Speech_recognition>,
+        <http://fraunhofer.de/example/Speech_synthesis>,
+        <http://fraunhofer.de/example/Structured_prediction>,
+        <http://fraunhofer.de/example/Text_Analysis>,
+        <http://fraunhofer.de/example/Text_Classification>,
+        <http://fraunhofer.de/example/Text_Compression>,
+        <http://fraunhofer.de/example/Text_Input_Methods>,
+        <http://fraunhofer.de/example/Text_corpus>,
+        <http://fraunhofer.de/example/Text_mining>,
+        <http://fraunhofer.de/example/Turing_test>,
+        <http://fraunhofer.de/example/Watson>,
+        <http://fraunhofer.de/example/WordNet>,
+        <http://fraunhofer.de/example/Word_error_rate> .
+
+<http://fraunhofer.de/example/Natural_Language_Processing_Models> a rdfs:Class ;
+    rdfs:label "Natural Language Processing Models" ;
+    rdfs:comment "Computational models that understand, interpret, and generate human language." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Natural_language> a rdfs:Class ;
+    rdfs:label "Natural language" ;
+    rdfs:comment "Human languages such as English, Spanish, and Mandarin." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/News_analytics> a rdfs:Class ;
+    rdfs:label "News analytics" ;
+    rdfs:comment "The application of natural language processing techniques to analyze news content." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Information_extraction> .
+
+<http://fraunhofer.de/example/PARRY> a rdfs:Class ;
+    rdfs:label "PARRY" ;
+    rdfs:comment "An early computer program designed to simulate conversations with a paranoid individual." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Parsing> a rdfs:Class ;
+    rdfs:label "Parsing" ;
+    rdfs:comment "The process of analyzing a string of symbols, either in natural language or computer languages." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Plagiarism_Detection> a rdfs:Class ;
+    rdfs:label "Plagiarism Detection" ;
+    rdfs:comment "The process of locating instances of plagiarism within a work or document." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Polysemy> a rdfs:Class ;
+    rdfs:label "Polysemy" ;
+    rdfs:comment "The phenomenon where a word has multiple meanings." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Probabilistic_latent_semantic_analysis> a rdfs:Class ;
+    rdfs:label "Probabilistic latent semantic analysis" ;
+    rdfs:comment "A statistical technique for analyzing relationships between a set of documents and the terms they contain." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Processing> .
+
+<http://fraunhofer.de/example/Query_expansion> a rdfs:Class ;
+    rdfs:label "Query expansion" ;
+    rdfs:comment "Process in enhancing search engine queries for more relevant results." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Question_answering> a rdfs:Class ;
+    rdfs:label "Question answering" ;
+    rdfs:comment "AI systems designed to answer questions posed in natural language." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Rule-based_machine_translation> a rdfs:Class ;
+    rdfs:label "Rule-based machine translation" ;
+    rdfs:comment "Translation of text from one language to another using hardcoded linguistic rules." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Semantic_Annotation> a rdfs:Class ;
+    rdfs:label "Semantic Annotation" ;
+    rdfs:comment "The process of attaching semantic metadata to portions of text." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Analysis> .
+
+<http://fraunhofer.de/example/Semantic_network> a rdfs:Class ;
+    rdfs:label "Semantic network" ;
+    rdfs:comment "A network that represents semantic relations between concepts in a network." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Semantic_similarity> a rdfs:Class ;
+    rdfs:label "Semantic similarity" ;
+    rdfs:comment "A measure of the likeness of the meanings of words or phrases." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Semi-supervised_learning> a rdfs:Class ;
+    rdfs:label "Semi-supervised learning" ;
+    rdfs:comment "Learning where the model is trained on a combination of labeled and unlabeled data." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Sentiment_analysis> a rdfs:Class ;
+    rdfs:label "Sentiment analysis" ;
+    rdfs:comment "The use of natural language processing to identify and extract subjective information from text." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Sign_Language_Recognition> a rdfs:Class ;
+    rdfs:label "Sign Language Recognition" ;
+    rdfs:comment "Technology that interprets sign language gestures using computer vision." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Speaker_recognition> a rdfs:Class ;
+    rdfs:label "Speaker recognition" ;
+    rdfs:comment "Technology that recognizes individuals based on their voice characteristics." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Speech_Analysis> a rdfs:Class ;
+    rdfs:label "Speech Analysis" ;
+    rdfs:comment "The study of spoken language and the process of analyzing speech signals." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Speech_processing> a rdfs:Class ;
+    rdfs:label "Speech processing" ;
+    rdfs:comment "Techniques for analyzing and interpreting spoken language." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Speech_recognition> a rdfs:Class ;
+    rdfs:label "Speech recognition" ;
+    rdfs:comment "Technology that converts spoken language into text." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Speech_synthesis> a rdfs:Class ;
+    rdfs:label "Speech synthesis" ;
+    rdfs:comment "The artificial production of human speech." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Structured_prediction> a rdfs:Class ;
+    rdfs:label "Structured prediction" ;
+    rdfs:comment "The task of predicting structured objects, rather than scalar discrete or real values." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Text_Analysis> a rdfs:Class ;
+    rdfs:label "Text Analysis" ;
+    rdfs:comment "The process of deriving high-quality information from text." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Text_Classification> a rdfs:Class ;
+    rdfs:label "Text Classification" ;
+    rdfs:comment "Assigning categories to text based on its content." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Text_Compression> a rdfs:Class ;
+    rdfs:label "Text Compression" ;
+    rdfs:comment "Reducing the size of text data for storage or transmission efficiency." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Text_Input_Methods> a rdfs:Class ;
+    rdfs:label "Text Input Methods" ;
+    rdfs:comment "Techniques for entering text into a computer system." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Text_corpus> a rdfs:Class ;
+    rdfs:label "Text corpus" ;
+    rdfs:comment "A large and structured set of texts used in linguistic research." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Text_mining> a rdfs:Class ;
+    rdfs:label "Text mining" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Data_mining>,
+        <http://fraunhofer.de/example/Document_classification> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Topic_model> a rdfs:Class ;
+    rdfs:label "Topic model" ;
+    rdfs:comment "Statistical technique for discovering abstract topics within a collection of documents." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Processing> .
+
+<http://fraunhofer.de/example/Trigram> a rdfs:Class ;
+    rdfs:label "Trigram" ;
+    rdfs:comment "A sequence of three adjacent elements from a string of tokens." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Mathematical_Foundations> .
+
+<http://fraunhofer.de/example/Turing_test> a rdfs:Class ;
+    rdfs:label "Turing test" ;
+    rdfs:comment "A test of a machine's ability to exhibit intelligent behavior indistinguishable from a human." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Value_mathematics> a rdfs:Class ;
+    rdfs:label "Value (mathematics)" ;
+    rdfs:comment "The magnitude, quantity, or degree of something measured." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Mathematical_Foundations> .
+
+<http://fraunhofer.de/example/Watson> a rdfs:Class ;
+    rdfs:label "Watson" ;
+    rdfs:comment "IBM's AI system known for competing on Jeopardy!." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/WordNet> a rdfs:Class ;
+    rdfs:label "WordNet" ;
+    rdfs:comment "A large lexical database of English, grouping words into sets of synonyms." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
+<http://fraunhofer.de/example/Word_error_rate> a rdfs:Class ;
+    rdfs:label "Word error rate" ;
+    rdfs:comment "A common metric for measuring the performance of a speech recognition system." ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_Language_Processing> .
+
