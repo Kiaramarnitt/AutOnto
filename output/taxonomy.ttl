@@ -1,0 +1,237 @@
+@prefix ns1: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://fraunhofer.de/example/Amazon_Reviews> a rdfs:Class ;
+    rdfs:label "Amazon Reviews" ;
+    rdfs:comment "Analyzing consumer feedback on products listed on Amazon." .
+
+<http://fraunhofer.de/example/Arabic_Language_Analysis> a rdfs:Class ;
+    rdfs:label "Arabic Language Analysis" ;
+    rdfs:comment "Techniques and challenges in processing Arabic text and speech." .
+
+<http://fraunhofer.de/example/Clinical_Text_Analysis> a rdfs:Class ;
+    rdfs:label "Clinical Text Analysis" ;
+    rdfs:comment "Extracting meaningful information from medical records and clinical notes." .
+
+<http://fraunhofer.de/example/Dialog_Systems> a rdfs:Class ;
+    rdfs:label "Dialog Systems" ;
+    rdfs:comment "AI systems capable of conducting conversation with human users." .
+
+<http://fraunhofer.de/example/Ensemble-Hybrid_Model> a rdfs:Class ;
+    rdfs:label "Ensemble-Hybrid Model" ;
+    rdfs:comment "Combining multiple models to improve prediction accuracy." .
+
+<http://fraunhofer.de/example/Feature_Selection> a rdfs:Class ;
+    rdfs:label "Feature Selection" ;
+    rdfs:comment "Identifying the most relevant features for model training." .
+
+<http://fraunhofer.de/example/Fuzzy_Integral_Classifier_Fusion> a rdfs:Class ;
+    rdfs:label "Fuzzy Integral Classifier Fusion" ;
+    rdfs:comment "Combining classifiers using fuzzy integral to improve decision making." .
+
+<http://fraunhofer.de/example/Fuzzy_Quantification_in_Hotel_Reviews> a rdfs:Class ;
+    rdfs:label "Fuzzy Quantification in Hotel Reviews" ;
+    rdfs:comment "Applying fuzzy logic to quantify sentiments in hotel reviews." .
+
+<http://fraunhofer.de/example/Handwritten_Word_Recognition> a rdfs:Class ;
+    rdfs:label "Handwritten Word Recognition" ;
+    rdfs:comment "Techniques for converting handwritten text into digital format." .
+
+<http://fraunhofer.de/example/Image_Captioning> a rdfs:Class ;
+    rdfs:label "Image Captioning" ;
+    rdfs:comment "Generating textual description of images using AI models." .
+
+<http://fraunhofer.de/example/Language_Acquisition> a rdfs:Class ;
+    rdfs:label "Language Acquisition" ;
+    rdfs:comment "The process by which humans learn to comprehend and communicate language." .
+
+<http://fraunhofer.de/example/Language_Analysis> a rdfs:Class ;
+    rdfs:label "Language Analysis" ;
+    rdfs:comment "Studying language structure and usage in various contexts." .
+
+<http://fraunhofer.de/example/Lexicon_Development> a rdfs:Class ;
+    rdfs:label "Lexicon Development" ;
+    rdfs:comment "Creating a database of words and their meanings for computational linguistics." .
+
+<http://fraunhofer.de/example/Linguistic_Analysis> a rdfs:Class ;
+    rdfs:label "Linguistic Analysis" ;
+    rdfs:comment "The study of language form, meaning, and context." .
+
+<http://fraunhofer.de/example/Logic_Rules_in_Sentiment_Classification> a rdfs:Class ;
+    rdfs:label "Logic Rules in Sentiment Classification" ;
+    rdfs:comment "Using predefined logical rules to improve sentiment analysis accuracy." .
+
+<http://fraunhofer.de/example/Machine_Learning_Models_and_Approaches> a rdfs:Class ;
+    rdfs:label "Machine Learning Models and Approaches" ;
+    rdfs:comment "Overview of various machine learning strategies for data analysis." .
+
+<http://fraunhofer.de/example/Machine_Translation> a rdfs:Class ;
+    rdfs:label "Machine Translation" ;
+    rdfs:comment "Automatic translation of text or speech from one language to another." .
+
+<http://fraunhofer.de/example/Majority_Voting_Approach> a rdfs:Class ;
+    rdfs:label "Majority Voting Approach" ;
+    rdfs:comment "Aggregating predictions from multiple models to improve accuracy." .
+
+<http://fraunhofer.de/example/Named_Entity_Recognition> a rdfs:Class ;
+    rdfs:label "Named Entity Recognition" ;
+    rdfs:comment "Identifying and classifying key elements in text into predefined categories." .
+
+<http://fraunhofer.de/example/Natural_Language_Processing_Applications> a rdfs:Class ;
+    rdfs:label "Natural Language Processing Applications" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Opinion_Mining_Approach>,
+        <http://fraunhofer.de/example/Sentiment_Analysis> .
+
+<http://fraunhofer.de/example/Natural_Language_Understanding_and_Generation> a rdfs:Class ;
+    rdfs:label "Natural Language Understanding and Generation" ;
+    rdfs:comment "Enabling computers to comprehend and produce human language." .
+
+<http://fraunhofer.de/example/Natural_language_processing> a rdfs:Class ;
+    rdfs:label "Natural language processing" ;
+    ns1:contributesTo <http://fraunhofer.de/example/Natural_Language_Processing_Applications>,
+        <http://fraunhofer.de/example/Sentiment_Analysis> ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Amazon_Reviews>,
+        <http://fraunhofer.de/example/Arabic_Language_Analysis>,
+        <http://fraunhofer.de/example/Clinical_Text_Analysis>,
+        <http://fraunhofer.de/example/Dialog_Systems>,
+        <http://fraunhofer.de/example/Ensemble-Hybrid_Model>,
+        <http://fraunhofer.de/example/Feature_Selection>,
+        <http://fraunhofer.de/example/Fuzzy_Integral_Classifier_Fusion>,
+        <http://fraunhofer.de/example/Handwritten_Word_Recognition>,
+        <http://fraunhofer.de/example/Image_Captioning>,
+        <http://fraunhofer.de/example/Language_Acquisition>,
+        <http://fraunhofer.de/example/Language_Analysis>,
+        <http://fraunhofer.de/example/Lexicon_Development>,
+        <http://fraunhofer.de/example/Linguistic_Analysis>,
+        <http://fraunhofer.de/example/Machine_Learning_Models_and_Approaches>,
+        <http://fraunhofer.de/example/Machine_Translation>,
+        <http://fraunhofer.de/example/Majority_Voting_Approach>,
+        <http://fraunhofer.de/example/Named_Entity_Recognition>,
+        <http://fraunhofer.de/example/Natural_Language_Understanding_and_Generation>,
+        <http://fraunhofer.de/example/Neutrosophic_Sets>,
+        <http://fraunhofer.de/example/Parsing_Strategies>,
+        <http://fraunhofer.de/example/Question_Answering>,
+        <http://fraunhofer.de/example/Semantic_Ontology>,
+        <http://fraunhofer.de/example/Semantically_Enriched_Information>,
+        <http://fraunhofer.de/example/Sentiment_Analysis>,
+        <http://fraunhofer.de/example/Sign_Language_Analysis>,
+        <http://fraunhofer.de/example/Specialized_Text_and_Speech_Processing>,
+        <http://fraunhofer.de/example/Speech_Emotion_Recognition>,
+        <http://fraunhofer.de/example/Speech_Recognition>,
+        <http://fraunhofer.de/example/Students_Feedback_Analysis>,
+        <http://fraunhofer.de/example/Text_Analysis>,
+        <http://fraunhofer.de/example/Text_Analysis_and_Classification>,
+        <http://fraunhofer.de/example/Text_Classification>,
+        <http://fraunhofer.de/example/Text_Similarity_Studies>,
+        <http://fraunhofer.de/example/Text_Summarization>,
+        <http://fraunhofer.de/example/Tourist_Comment_Classification>,
+        <http://fraunhofer.de/example/Word_Embeddings> .
+
+<http://fraunhofer.de/example/Neutrosophic_Sets> a rdfs:Class ;
+    rdfs:label "Neutrosophic Sets" ;
+    rdfs:comment "Mathematical tool for dealing with imprecise, indeterminate data." .
+
+<http://fraunhofer.de/example/News_Reviews_Sentiment_Lexicon> a rdfs:Class ;
+    rdfs:label "News Reviews Sentiment Lexicon" ;
+    rdfs:comment "Developing a lexicon for analyzing sentiments in news articles." .
+
+<http://fraunhofer.de/example/Online_Pharmacy_Reviews> a rdfs:Class ;
+    rdfs:label "Online Pharmacy Reviews" ;
+    rdfs:comment "Analyzing customer reviews of online pharmacies for insights and trends." .
+
+<http://fraunhofer.de/example/Online_Reviews_Sentiment_Analysis> a rdfs:Class ;
+    rdfs:label "Online Reviews Sentiment Analysis" ;
+    rdfs:comment "Evaluating sentiments in online product or service reviews." .
+
+<http://fraunhofer.de/example/Opinion_Mining_Approach> a rdfs:Class ;
+    rdfs:label "Opinion Mining Approach" ;
+    rdfs:comment "Techniques for extracting subjective information from text." .
+
+<http://fraunhofer.de/example/Parsing_Strategies> a rdfs:Class ;
+    rdfs:label "Parsing Strategies" ;
+    rdfs:comment "Methods for analyzing and understanding grammatical structure of sentences." .
+
+<http://fraunhofer.de/example/Question_Answering> a rdfs:Class ;
+    rdfs:label "Question Answering" ;
+    rdfs:comment "Building systems that automatically answer questions posed by humans." .
+
+<http://fraunhofer.de/example/Semantic_Ontology> a rdfs:Class ;
+    rdfs:label "Semantic Ontology" ;
+    rdfs:comment "Creating structured frameworks to organize information and its relationships." .
+
+<http://fraunhofer.de/example/Semantically_Enriched_Information> a rdfs:Class ;
+    rdfs:label "Semantically Enriched Information" ;
+    rdfs:comment "Enhancing information with semantic metadata for better understanding." .
+
+<http://fraunhofer.de/example/Sentiment_Analysis> a rdfs:Class ;
+    rdfs:label "Sentiment Analysis" ;
+    ns1:relatedEquivalent <http://fraunhofer.de/example/Sentiment_Analysis_Applications> ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Fuzzy_Quantification_in_Hotel_Reviews>,
+        <http://fraunhofer.de/example/Logic_Rules_in_Sentiment_Classification>,
+        <http://fraunhofer.de/example/News_Reviews_Sentiment_Lexicon>,
+        <http://fraunhofer.de/example/Online_Pharmacy_Reviews>,
+        <http://fraunhofer.de/example/Online_Reviews_Sentiment_Analysis>,
+        <http://fraunhofer.de/example/Twitter_Sentiment_Analysis>,
+        <http://fraunhofer.de/example/Twitter_Sentiments_Analysis> ;
+    rdfs:comment "Determining the emotional tone behind a series of words." .
+
+<http://fraunhofer.de/example/Sentiment_Analysis_Applications> a rdfs:Class ;
+    rdfs:label "Sentiment Analysis Applications" ;
+    rdfs:comment "Utilizing sentiment analysis in various domains like marketing and customer service." .
+
+<http://fraunhofer.de/example/Sign_Language_Analysis> a rdfs:Class ;
+    rdfs:label "Sign Language Analysis" ;
+    rdfs:comment "Techniques for interpreting and translating sign language." .
+
+<http://fraunhofer.de/example/Specialized_Text_and_Speech_Processing> a rdfs:Class ;
+    rdfs:label "Specialized Text and Speech Processing" ;
+    rdfs:comment "Advanced techniques for processing specific types of text and speech." .
+
+<http://fraunhofer.de/example/Speech_Emotion_Recognition> a rdfs:Class ;
+    rdfs:label "Speech Emotion Recognition" ;
+    rdfs:comment "Identifying human emotions from speech patterns." .
+
+<http://fraunhofer.de/example/Speech_Recognition> a rdfs:Class ;
+    rdfs:label "Speech Recognition" ;
+    rdfs:comment "Translating spoken language into text." .
+
+<http://fraunhofer.de/example/Students_Feedback_Analysis> a rdfs:Class ;
+    rdfs:label "Students' Feedback Analysis" ;
+    rdfs:comment "Evaluating students' opinions and feedback for educational improvement." .
+
+<http://fraunhofer.de/example/Text_Analysis> a rdfs:Class ;
+    rdfs:label "Text Analysis" ;
+    rdfs:comment "Extracting meaningful information from text." .
+
+<http://fraunhofer.de/example/Text_Analysis_and_Classification> a rdfs:Class ;
+    rdfs:label "Text Analysis and Classification" ;
+    rdfs:comment "Automatically analyzing and categorizing text documents." .
+
+<http://fraunhofer.de/example/Text_Classification> a rdfs:Class ;
+    rdfs:label "Text Classification" ;
+    rdfs:comment "Automatically categorizing text into predefined groups." .
+
+<http://fraunhofer.de/example/Text_Similarity_Studies> a rdfs:Class ;
+    rdfs:label "Text Similarity Studies" ;
+    rdfs:comment "Investigating how similar or different two pieces of text are." .
+
+<http://fraunhofer.de/example/Text_Summarization> a rdfs:Class ;
+    rdfs:label "Text Summarization" ;
+    rdfs:comment "Creating a concise and coherent summary of a longer text document." .
+
+<http://fraunhofer.de/example/Tourist_Comment_Classification> a rdfs:Class ;
+    rdfs:label "Tourist Comment Classification" ;
+    rdfs:comment "Categorizing tourists' comments for insights into travel experiences." .
+
+<http://fraunhofer.de/example/Twitter_Sentiment_Analysis> a rdfs:Class ;
+    rdfs:label "Twitter Sentiment Analysis" ;
+    rdfs:comment "Analyzing the tone of tweets to gauge public opinion." .
+
+<http://fraunhofer.de/example/Twitter_Sentiments_Analysis> a rdfs:Class ;
+    rdfs:label "Twitter Sentiments Analysis" ;
+    rdfs:comment "Examining the emotional tone of tweets to understand public opinion." .
+
+<http://fraunhofer.de/example/Word_Embeddings> a rdfs:Class ;
+    rdfs:label "Word Embeddings" ;
+    rdfs:comment "Mapping words or phrases to vectors of real numbers for natural language processing." .
+
