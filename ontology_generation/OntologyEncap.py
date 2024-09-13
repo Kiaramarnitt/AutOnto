@@ -44,7 +44,7 @@ class OntologyEncap():
         """
         return self.create_uri(fh, label)
 
-    def add_class(self, graph, class_uri, label=None, comment=None, parent_uri=None, relationship_uri=None):
+    def add_class(self, graph, class_uri, label=None, comment=None, parent_uri=None):
         """
         Add triples to specify that the URI represents a class,
         set its rdfs:label, and optionally add its rdfs:comment.
@@ -54,11 +54,8 @@ class OntologyEncap():
             graph.add((class_uri, RDFS.label, Literal(label)))  # Set the label
         if comment:
             graph.add((class_uri, RDFS.comment, Literal(comment)))  # Set the comment
-        # if parent_uri:
-        #     graph.add((class_uri, RDFS.subClassOf, parent_uri))  # Specify subClassOf relationship
-
-        if parent_uri and relationship_uri:
-            graph.add((parent_uri, relationship_uri, class_uri))  # Specify relationship to parent
+        if parent_uri:
+            graph.add((class_uri, RDFS.subClassOf, parent_uri))  # Specify subClassOf relationship
 
 
     def add_relationship(self, graph, parent_uri, relationship_uri, child_uri):
@@ -79,19 +76,21 @@ class OntologyEncap():
                 if isinstance(item, dict):
                     for key, value in item.items():
                         child_uri = self.create_class_uri(fh, key)
-                        self.add_class(graph, child_uri, key, meta.get(key) if meta else None, parent_uri, relationship_uri)
+                        self.add_class(graph, child_uri, key, meta.get(key) if meta else None, parent_uri)
                         self.add_relationship(graph, parent_uri, relationship_uri, child_uri)
                         self.process_relationship_data(graph, fh, child_uri, self.schema.superTopicOf, value, meta)
                 else:
                     child_uri = self.create_uri(fh, item)
-                    self.add_class(graph, child_uri, item, meta.get(item) if meta else None, parent_uri, relationship_uri)
+                    self.add_class(graph, child_uri, item, meta.get(item) if meta else None, parent_uri)
+                    self.add_relationship(graph, parent_uri, relationship_uri, child_uri)
 
         elif isinstance(relationship_data, dict):
             self.process_relationships(graph, fh, parent_uri, relationship_data, meta)
 
         else:
             child_uri = self.create_uri(fh, relationship_data)
-            self.add_class(graph, child_uri, relationship_data, meta.get(relationship_data) if meta else None, parent_uri, relationship_uri)
+            self.add_class(graph, child_uri, relationship_data, meta.get(relationship_data) if meta else None, parent_uri)
+            self.add_relationship(graph, parent_uri, relationship_uri, child_uri)
 
 
     def process_relationships(self, graph, fh, parent_uri, relationships, meta=None):

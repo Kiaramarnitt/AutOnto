@@ -9,6 +9,12 @@ Using LLMs and Topic Modelling to generated ontologies
   - `data.csv`: Original data.
   - `cleaned_data.csv`: Processed and cleaned data.
 
+- **data_collection**: Module for data retrieval and cleaning.
+  
+  - `OpenAlex.py`: Implementation of the OpenAlex class for fetching and processing data from the OpenAlex API.
+  - `example.py`: Example usage of the module.
+  - `visualization.ipynb`: Jupyter notebook for data exploration and visualization.
+
 - **ontology_generation**: Functions for ontology generation.
   
   - `Evaluation.py`: Module for extracting topics from existing ontologies, cleaning them, and comparing using similarity metrics.
@@ -22,9 +28,10 @@ Using LLMs and Topic Modelling to generated ontologies
 
 `run.ipynb`: Jupyter notebook version of the above script
 
-- Modify the search term in the following [line](https://git.informatik.fh-nuernberg.de/fe/autonto/-/blob/main/run.py?ref_type=heads#L120) in `run.py` or in `run.ipynb`
-- Similarly, modify excluded terms in the line below (terms that are generic to the search term/of a higher domain.)
-- Ensure `data\cleaned_data.csv` file exists in the same directory as `run.py` or `run.ipynb`.
-- `cleaned_data.csv` file must have the following columns [`abstract`, `title`, `language`, `type`]. Alternatively, if your data doesn't have columns `language` or `type`, comment them out from this [line] (https://git.informatik.fh-nuernberg.de/fe/autonto/-/blob/main/run.py?ref_type=heads#L83)
-- !Note: If the data doesn't have `abstract` or `title` then the user will have to comment multiple lines within the script.
+- Modify the search term in the following [line](https://github.com/yeahalti/AutoOnto/blob/fb6a304627f99e96498b6bcf53e24ba9b016ee66/run.py#L67) in `run.py` or alternatively, modify and run `example.py` in `data_collection`. 
+- Set work_parameter as either [topics](https://docs.openalex.org/api-entities/topics) or [concepts](https://docs.openalex.org/api-entities/concepts). Note: While the `concepts` feature has been deprecated, this repository utilizes it as it was implemented when the feature was still active.
+
+## To-do
+  - Add models to determine concepts
+  - Study about topic association
   

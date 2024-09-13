@@ -1,0 +1,293 @@
+@prefix ns1: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://fraunhofer.de/example/Amazon_Reviews> a rdfs:Class ;
+    rdfs:label "Amazon Reviews" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Review_Analysis>,
+        <http://fraunhofer.de/example/Sentiment_Classification> .
+
+<http://fraunhofer.de/example/Application_Specific_NLP> a rdfs:Class ;
+    rdfs:label "Application Specific NLP" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/LLM_Negotiations>,
+        <http://fraunhofer.de/example/Machine_Translation>,
+        <http://fraunhofer.de/example/News_Reviews_Sentiment_Lexicon>,
+        <http://fraunhofer.de/example/Sentiment_Analysis> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_language_processing> .
+
+<http://fraunhofer.de/example/Arabic_Language_Analysis> a rdfs:Class ;
+    rdfs:label "Arabic Language Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Chinese_Microblogging_Smiley> a rdfs:Class ;
+    rdfs:label "Chinese Microblogging Smiley" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Classification> .
+
+<http://fraunhofer.de/example/Clinical_Text_Analysis> a rdfs:Class ;
+    rdfs:label "Clinical Text Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Communication_Modalities> a rdfs:Class ;
+    rdfs:label "Communication Modalities" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Dialog_Systems>,
+        <http://fraunhofer.de/example/Handwritten_Word_Recognition>,
+        <http://fraunhofer.de/example/Image_Captioning>,
+        <http://fraunhofer.de/example/Sign_Language_Analysis>,
+        <http://fraunhofer.de/example/Speech_Emotion_Recognition>,
+        <http://fraunhofer.de/example/Speech_Recognition> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_language_processing> .
+
+<http://fraunhofer.de/example/Dialog_Systems> a rdfs:Class ;
+    rdfs:label "Dialog Systems" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Communication_Modalities> .
+
+<http://fraunhofer.de/example/Emerging_Technologies_and_Methods_in_NLP> a rdfs:Class ;
+    rdfs:label "Emerging Technologies and Methods in NLP" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/LLM_Negotiations> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_language_processing> .
+
+<http://fraunhofer.de/example/Ensemble-Hybrid_Model> a rdfs:Class ;
+    rdfs:label "Ensemble-Hybrid Model" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Analysis_Models> .
+
+<http://fraunhofer.de/example/Feature_Selection> a rdfs:Class ;
+    rdfs:label "Feature Selection" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Majority_Voting_Approach> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Machine_Learning_and_NLP> .
+
+<http://fraunhofer.de/example/Fuzzy_Integral_Classifier_Fusion> a rdfs:Class ;
+    rdfs:label "Fuzzy Integral Classifier Fusion" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Analysis_Models> .
+
+<http://fraunhofer.de/example/Fuzzy_Quantification_in_Hotel_Reviews> a rdfs:Class ;
+    rdfs:label "Fuzzy Quantification in Hotel Reviews" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Analysis> .
+
+<http://fraunhofer.de/example/Handwritten_Word_Recognition> a rdfs:Class ;
+    rdfs:label "Handwritten Word Recognition" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Communication_Modalities> .
+
+<http://fraunhofer.de/example/Image_Captioning> a rdfs:Class ;
+    rdfs:label "Image Captioning" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Communication_Modalities> .
+
+<http://fraunhofer.de/example/LLM_Negotiations> a rdfs:Class ;
+    rdfs:label "LLM Negotiations" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Application_Specific_NLP>,
+        <http://fraunhofer.de/example/Emerging_Technologies_and_Methods_in_NLP> .
+
+<http://fraunhofer.de/example/Language_Acquisition> a rdfs:Class ;
+    rdfs:label "Language Acquisition" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Language_Analysis> a rdfs:Class ;
+    rdfs:label "Language Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Language_Understanding> a rdfs:Class ;
+    rdfs:label "Language Understanding" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Arabic_Language_Analysis>,
+        <http://fraunhofer.de/example/Clinical_Text_Analysis>,
+        <http://fraunhofer.de/example/Language_Acquisition>,
+        <http://fraunhofer.de/example/Language_Analysis>,
+        <http://fraunhofer.de/example/Lexicon_Development>,
+        <http://fraunhofer.de/example/Linguistic_Analysis>,
+        <http://fraunhofer.de/example/Named_Entity_Recognition>,
+        <http://fraunhofer.de/example/Parsing_and_Text_Processing>,
+        <http://fraunhofer.de/example/Semantic_Ontology>,
+        <http://fraunhofer.de/example/Semantically_Enriched_Information>,
+        <http://fraunhofer.de/example/Sentiment_and_Opinion_Analysis>,
+        <http://fraunhofer.de/example/Text_Analysis> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_language_processing> .
+
+<http://fraunhofer.de/example/Lexicon_Development> a rdfs:Class ;
+    rdfs:label "Lexicon Development" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Linguistic_Analysis> a rdfs:Class ;
+    rdfs:label "Linguistic Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Logic_Rules_in_Sentiment_Classification> a rdfs:Class ;
+    rdfs:label "Logic Rules in Sentiment Classification" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Classification> .
+
+<http://fraunhofer.de/example/Machine_Learning_and_NLP> a rdfs:Class ;
+    rdfs:label "Machine Learning and NLP" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Feature_Selection>,
+        <http://fraunhofer.de/example/Neutrosophic_Sets>,
+        <http://fraunhofer.de/example/Question_Answering_Systems>,
+        <http://fraunhofer.de/example/Sentiment_Analysis_Models>,
+        <http://fraunhofer.de/example/Word_Embeddings> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Natural_language_processing> .
+
+<http://fraunhofer.de/example/Machine_Translation> a rdfs:Class ;
+    rdfs:label "Machine Translation" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Application_Specific_NLP> .
+
+<http://fraunhofer.de/example/Majority_Voting_Approach> a rdfs:Class ;
+    rdfs:label "Majority Voting Approach" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Feature_Selection> .
+
+<http://fraunhofer.de/example/Named_Entity_Recognition> a rdfs:Class ;
+    rdfs:label "Named Entity Recognition" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Natural_language_processing> a rdfs:Class ;
+    rdfs:label "Natural language processing" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Application_Specific_NLP>,
+        <http://fraunhofer.de/example/Communication_Modalities>,
+        <http://fraunhofer.de/example/Emerging_Technologies_and_Methods_in_NLP>,
+        <http://fraunhofer.de/example/Language_Understanding>,
+        <http://fraunhofer.de/example/Machine_Learning_and_NLP> .
+
+<http://fraunhofer.de/example/Neutrosophic_Sets> a rdfs:Class ;
+    rdfs:label "Neutrosophic Sets" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Machine_Learning_and_NLP> .
+
+<http://fraunhofer.de/example/News_Reviews_Sentiment_Lexicon> a rdfs:Class ;
+    rdfs:label "News Reviews Sentiment Lexicon" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Application_Specific_NLP> .
+
+<http://fraunhofer.de/example/Online_Pharmacy_Reviews> a rdfs:Class ;
+    rdfs:label "Online Pharmacy Reviews" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Review_Analysis>,
+        <http://fraunhofer.de/example/Sentiment_Classification> .
+
+<http://fraunhofer.de/example/Online_Reviews_Sentiment_Analysis> a rdfs:Class ;
+    rdfs:label "Online Reviews Sentiment Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Review_Analysis>,
+        <http://fraunhofer.de/example/Sentiment_Classification> .
+
+<http://fraunhofer.de/example/Opinion_Mining_Approach> a rdfs:Class ;
+    rdfs:label "Opinion Mining Approach" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Classification> .
+
+<http://fraunhofer.de/example/Parsing_Strategies> a rdfs:Class ;
+    rdfs:label "Parsing Strategies" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Parsing_and_Text_Processing> .
+
+<http://fraunhofer.de/example/Parsing_and_Text_Processing> a rdfs:Class ;
+    rdfs:label "Parsing and Text Processing" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Parsing_Strategies>,
+        <http://fraunhofer.de/example/Text_Processing> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Question_Answering> a rdfs:Class ;
+    rdfs:label "Question Answering" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Question_Answering_Systems> .
+
+<http://fraunhofer.de/example/Question_Answering_Systems> a rdfs:Class ;
+    rdfs:label "Question Answering Systems" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Question_Answering> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Machine_Learning_and_NLP> .
+
+<http://fraunhofer.de/example/Review_Analysis> a rdfs:Class ;
+    rdfs:label "Review Analysis" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Amazon_Reviews>,
+        <http://fraunhofer.de/example/Online_Pharmacy_Reviews>,
+        <http://fraunhofer.de/example/Online_Reviews_Sentiment_Analysis>,
+        <http://fraunhofer.de/example/Tourist_Comment_Classification> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Analysis> .
+
+<http://fraunhofer.de/example/Reviews> a rdfs:Class ;
+    rdfs:label "Reviews" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Analysis> .
+
+<http://fraunhofer.de/example/Semantic_Ontology> a rdfs:Class ;
+    rdfs:label "Semantic Ontology" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Semantically_Enriched_Information> a rdfs:Class ;
+    rdfs:label "Semantically Enriched Information" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Sentiment_Analysis> a rdfs:Class ;
+    rdfs:label "Sentiment Analysis" ;
+    ns1:relatedEquivalent <http://fraunhofer.de/example/Twitter_Sentiments_Analysis> ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Fuzzy_Quantification_in_Hotel_Reviews>,
+        <http://fraunhofer.de/example/Review_Analysis>,
+        <http://fraunhofer.de/example/Reviews>,
+        <http://fraunhofer.de/example/Students_Feedback_Analysis>,
+        <http://fraunhofer.de/example/Twitter_Sentiment_Analysis> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Application_Specific_NLP>,
+        <http://fraunhofer.de/example/Sentiment_and_Opinion_Analysis> .
+
+<http://fraunhofer.de/example/Sentiment_Analysis_Models> a rdfs:Class ;
+    rdfs:label "Sentiment Analysis Models" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Ensemble-Hybrid_Model>,
+        <http://fraunhofer.de/example/Fuzzy_Integral_Classifier_Fusion> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Machine_Learning_and_NLP> .
+
+<http://fraunhofer.de/example/Sentiment_Classification> a rdfs:Class ;
+    rdfs:label "Sentiment Classification" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Amazon_Reviews>,
+        <http://fraunhofer.de/example/Chinese_Microblogging_Smiley>,
+        <http://fraunhofer.de/example/Logic_Rules_in_Sentiment_Classification>,
+        <http://fraunhofer.de/example/Online_Pharmacy_Reviews>,
+        <http://fraunhofer.de/example/Online_Reviews_Sentiment_Analysis>,
+        <http://fraunhofer.de/example/Opinion_Mining_Approach>,
+        <http://fraunhofer.de/example/Tourist_Comment_Classification> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_and_Opinion_Analysis> .
+
+<http://fraunhofer.de/example/Sentiment_and_Opinion_Analysis> a rdfs:Class ;
+    rdfs:label "Sentiment and Opinion Analysis" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Sentiment_Analysis>,
+        <http://fraunhofer.de/example/Sentiment_Classification> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Sign_Language_Analysis> a rdfs:Class ;
+    rdfs:label "Sign Language Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Communication_Modalities> .
+
+<http://fraunhofer.de/example/Speech_Emotion_Recognition> a rdfs:Class ;
+    rdfs:label "Speech Emotion Recognition" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Communication_Modalities> .
+
+<http://fraunhofer.de/example/Speech_Recognition> a rdfs:Class ;
+    rdfs:label "Speech Recognition" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Communication_Modalities> .
+
+<http://fraunhofer.de/example/Students_Feedback_Analysis> a rdfs:Class ;
+    rdfs:label "Students' Feedback Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Analysis> .
+
+<http://fraunhofer.de/example/Text_Analysis> a rdfs:Class ;
+    rdfs:label "Text Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Language_Understanding> .
+
+<http://fraunhofer.de/example/Text_Classification> a rdfs:Class ;
+    rdfs:label "Text Classification" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Text_Processing> .
+
+<http://fraunhofer.de/example/Text_Processing> a rdfs:Class ;
+    rdfs:label "Text Processing" ;
+    ns1:superTopicOf <http://fraunhofer.de/example/Text_Classification>,
+        <http://fraunhofer.de/example/Text_Similarity_Studies>,
+        <http://fraunhofer.de/example/Text_Summarization> ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Parsing_and_Text_Processing> .
+
+<http://fraunhofer.de/example/Text_Similarity_Studies> a rdfs:Class ;
+    rdfs:label "Text Similarity Studies" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Text_Processing> .
+
+<http://fraunhofer.de/example/Text_Summarization> a rdfs:Class ;
+    rdfs:label "Text Summarization" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Text_Processing> .
+
+<http://fraunhofer.de/example/Tourist_Comment_Classification> a rdfs:Class ;
+    rdfs:label "Tourist Comment Classification" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Review_Analysis>,
+        <http://fraunhofer.de/example/Sentiment_Classification> .
+
+<http://fraunhofer.de/example/Twitter_Sentiment_Analysis> a rdfs:Class ;
+    rdfs:label "Twitter Sentiment Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Analysis> .
+
+<http://fraunhofer.de/example/Twitter_Sentiments_Analysis> a rdfs:Class ;
+    rdfs:label "Twitter Sentiments Analysis" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Sentiment_Analysis> .
+
+<http://fraunhofer.de/example/Word_Embeddings> a rdfs:Class ;
+    rdfs:label "Word Embeddings" ;
+    rdfs:subClassOf <http://fraunhofer.de/example/Machine_Learning_and_NLP> .
+

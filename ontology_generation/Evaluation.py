@@ -4,68 +4,20 @@ from typing import Any, Dict, List
 from itertools import chain
 import re
 from json.decoder import JSONDecodeError
-from rdflib import Namespace, Graph
 
 from sklearn.metrics.pairwise import cosine_similarity
 
 
 class Evaluation():
-#     @staticmethod
-#     def extract_concepts_and_deduplicate(file_path, parent_topic_uri):
-#         """
-#         Extracts concepts from an RDF file and deduplicates them.
-
-#         Args:
-#         - file_path (str): Path to the RDF file.
-#         - parent_topic_uri (str): URI of the parent topic.
-
-#         Returns:
-#         - set: Deduplicated set of concept URIs.
-#         """
-#         # Initialize the graph
-#         g = Graph()
-#         g.parse(file_path, format="ttl")
-
-#         # SPARQL query to select child topics and their equivalents
-#         query = """
-#         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-#         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-#         PREFIX ns0: <http://cso.kmi.open.ac.uk/schema/cso#>
-
-#         SELECT ?childTopic ?equivalent
-#         WHERE {
-#           <%s> ns0:superTopicOf ?childTopic .
-#           OPTIONAL { ?childTopic ns0:relatedEquivalent ?equivalent . }
-#         }""" % parent_topic_uri
-
-#         # Execute the SPARQL query
-#         results = g.query(query)
-
-#         # Process the results to deduplicate
-#         concept_properties = {}
-#         equivalent_map = {}
-
-#         for row in results:
-#             child_topic = str(row.childTopic)
-#             equivalent = str(row.equivalent) if row.equivalent else None
-
-#             # If there's an equivalent, map it back to the child topic
-#             if equivalent:
-#                 equivalent_map[equivalent] = child_topic
-#             elif child_topic not in equivalent_map:  # Child topic with no equivalent
-#                 equivalent_map[child_topic] = child_topic
-
-#         # Deduplication: prefer the child topic if it appears as an equivalent elsewhere
-#         deduplicated_topics = set(equivalent_map.values())
-
-#         return deduplicated_topics
-
+    @staticmethod
     def extract_concepts_and_deduplicate(file_path, parent_topic_uri):
         """
-        Extracts all descendant concepts from an RDF file and deduplicates them.
+        Extracts concepts from an RDF file and deduplicates them.
+
         Args:
         - file_path (str): Path to the RDF file.
         - parent_topic_uri (str): URI of the parent topic.
+
         Returns:
         - set: Deduplicated set of concept URIs.
         """
@@ -73,35 +25,39 @@ class Evaluation():
         g = Graph()
         g.parse(file_path, format="ttl")
 
-        # SPARQL query to select all descendant topics and their equivalents
+        # SPARQL query to select child topics and their equivalents
         query = """
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX ns0: <http://cso.kmi.open.ac.uk/schema/cso#>
-        SELECT DISTINCT ?descendant ?equivalent
+
+        SELECT ?childTopic ?equivalent
         WHERE {
-          <%s> ns0:superTopicOf+ ?descendant .
-          OPTIONAL { ?descendant ns0:relatedEquivalent ?equivalent . }
-        }
-        """ % parent_topic_uri
+          <%s> ns0:superTopicOf ?childTopic .
+          OPTIONAL { ?childTopic ns0:relatedEquivalent ?equivalent . }
+        }""" % parent_topic_uri
 
         # Execute the SPARQL query
         results = g.query(query)
 
         # Process the results to deduplicate
+        concept_properties = {}
         equivalent_map = {}
+
         for row in results:
-            descendant = str(row.descendant)
+            child_topic = str(row.childTopic)
             equivalent = str(row.equivalent) if row.equivalent else None
 
-            # If there's an equivalent, map it back to the descendant topic
+            # If there's an equivalent, map it back to the child topic
             if equivalent:
-                equivalent_map[equivalent] = descendant
-            elif descendant not in equivalent_map:  # Descendant topic with no equivalent
-                equivalent_map[descendant] = descendant
+                equivalent_map[equivalent] = child_topic
+            elif child_topic not in equivalent_map:  # Child topic with no equivalent
+                equivalent_map[child_topic] = child_topic
 
-        # Deduplication: prefer the descendant topic if it appears as an equivalent elsewhere
+        # Deduplication: prefer the child topic if it appears as an equivalent elsewhere
         deduplicated_topics = set(equivalent_map.values())
+
+        # This part is simplified; expand according to your needs
         return deduplicated_topics
 
     @staticmethod
@@ -140,35 +96,6 @@ class Evaluation():
         return new_concept_properties
 
     @staticmethod
-#     def get_descendants(concept_uri, graph):
-#         """
-#         Retrieves all descendants of a concept URI using SPARQL.
-
-#         Args:
-#         - concept_uri (str): The URI of the concept.
-#         - graph (rdflib.Graph): The RDF graph containing the concept hierarchy.
-
-#         Returns:
-#         - set: Set of URIs representing the descendants of the concept.
-#         """
-#         # SPARQL query to select all descendants of the given concept
-#         query = """
-#         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-#         SELECT ?descendant WHERE {
-#             ?descendant rdfs:superTopicOf* <%s> .
-#         }
-#         """ % concept_uri
-
-#         # Execute the query
-#         results = graph.query(query)
-
-#         # Extract descendant URIs
-#         descendants = set()
-#         for row in results:
-#             descendants.add(str(row['descendant']))
-
-#         return descendants
-
     def get_descendants(concept_uri, graph):
         """
         Retrieves all descendants of a concept URI using SPARQL.
@@ -180,14 +107,11 @@ class Evaluation():
         Returns:
         - set: Set of URIs representing the descendants of the concept.
         """
-        # Define the ns1 namespace based on the TTL file
-        ns1 = Namespace("http://schema.org/")
-
-        # SPARQL query to select all descendants of the given concept using the correct property
+        # SPARQL query to select all descendants of the given concept
         query = """
-        PREFIX ns1: <http://schema.org/>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         SELECT ?descendant WHERE {
-            <%s> ns1:superTopicOf* ?descendant .
+            ?descendant rdfs:subClassOf* <%s> .
         }
         """ % concept_uri
 
@@ -197,11 +121,7 @@ class Evaluation():
         # Extract descendant URIs
         descendants = set()
         for row in results:
-            descendant_uri = str(row['descendant'])
-            descendants.add(descendant_uri)
-            # print(f"Found descendant: {descendant_uri}")  # Debugging line
-
-        print(f"Total descendants found: {len(descendants)}")  # Debugging line
+            descendants.add(str(row['descendant']))
 
         return descendants
 
